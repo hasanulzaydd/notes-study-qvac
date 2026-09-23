@@ -79,7 +79,13 @@ async function main() {
 
   for (const [i, { question, answer }] of questions.entries()) {
     console.log(`\nQuestion ${i + 1}: ${question}`);
-    const userAnswer = await rl.question('Your answer: ');
+    let userAnswer;
+    try {
+      userAnswer = await rl.question('Your answer: ');
+    } catch {
+      console.log('\nInput ended early, stopping quiz here.');
+      break;
+    }
 
     console.log('Grading...');
     const gradePrompt = [
