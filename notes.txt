@@ -1,0 +1,18 @@
+The mitochondrion is the organelle that produces most of a cell's ATP through
+cellular respiration, which is why it is often called the "powerhouse of the
+cell." It has its own DNA, separate from the nucleus, and is believed to have
+originated from a free-living bacterium that was engulfed by an early
+eukaryotic cell, a theory known as endosymbiosis.
+
+Photosynthesis takes place in the chloroplasts of plant cells and converts
+light energy, water, and carbon dioxide into glucose and oxygen. The overall
+reaction is 6CO2 + 6H2O + light energy -> C6H12O6 + 6O2.
+
+DNA replication is semi-conservative: each new double helix contains one
+original strand and one newly synthesized strand. The enzyme DNA polymerase
+reads the template strand in the 3' to 5' direction and synthesizes the new
+strand in the 5' to 3' direction.
+
+Osmosis is the movement of water molecules across a selectively permeable
+membrane from an area of low solute concentration to an area of high solute
+concentration, until equilibrium is reached.
