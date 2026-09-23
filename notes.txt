@@ -1,21 +1,31 @@
-Cell bio lecture, ch 6-7
+Python basics - self study notes
 
-- mitochondria = "powerhouse" thing, makes ATP, has its own DNA (weird, separate
-  from nucleus). prof mentioned endosymbiotic theory - basically an old bacteria
-  got swallowed by a bigger cell way back and they just... stayed. explains the
-  separate DNA + double membrane.
+- python is dynamically typed, don't need to declare types like in Java/C.
+  var = 5 then var = "hi" later is totally fine, type just changes.
 
-- chloroplasts only in plants, do photosynthesis. light + water + CO2 -> sugar +
-  oxygen. remember the reaction has 6 of CO2 and 6 of water, makes glucose
-  (C6H12O6) and 6 O2. happens inside the chloroplast obviously.
+- indentation matters!! no curly braces, blocks are defined by whitespace.
+  mixing tabs and spaces breaks everything, learned that the hard way.
 
-- DNA replication: NOT copied all at once from scratch — semi conservative,
-  so each new strand pairs with ONE old strand + one new one. polymerase does
-  this but reads in opposite direction from how it writes (3'->5' read, 5'->3'
-  write, always confuses me, need to just memorize it)
+- lists are mutable (can change after creating), tuples are NOT — once you
+  make a tuple you can't change its items. lists use [ ], tuples use ( ).
 
-- osmosis = water moving across membrane, always toward MORE solute (higher
-  concentration side pulls water in) until it evens out. don't mix up with
-  diffusion which is more general (any particle, not just water)
+- dictionaries = key/value pairs, like {"name": "sam", "age": 20}. from
+  python 3.7+ they keep insertion order btw, didn't used to.
 
-- also check slide 14 for the leaf diagram, might be on the exam
+- functions defined with def, use return to send back a value. if no
+  return, function just gives back None by default.
+
+- for loops iterate over anything iterable (lists, strings, ranges, dict
+  keys...). range(5) goes 0,1,2,3,4 — stops BEFORE the number you give it.
+
+- list comprehension: [x*2 for x in range(5)] — shorthand way to build a
+  list instead of a for loop + append. faster and more "pythonic"
+
+- == checks value equality, "is" checks if it's literally the same object
+  in memory. mixed these up on the quiz last time.
+
+- exceptions: try/except blocks. can catch specific errors like
+  except ValueError: or just except: for anything (not great practice tho)
+
+- packages installed with pip, virtual envs (venv) keep project deps
+  separate so they don't clash between projects
