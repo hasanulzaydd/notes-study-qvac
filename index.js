@@ -10,14 +10,14 @@ import {
 
 const NUM_QUESTIONS = 4;
 
-async function ask(modelId, history) {
+async function ask(modelId, history, { silent = false } = {}) {
   const result = completion({ modelId, history, stream: true });
   let text = '';
   for await (const token of result.tokenStream) {
-    process.stdout.write(token);
+    if (!silent) process.stdout.write(token);
     text += token;
   }
-  process.stdout.write('\n');
+  if (!silent) process.stdout.write('\n');
   return text;
 }
 
@@ -54,7 +54,7 @@ async function main() {
   });
   console.log('\nModel loaded.\n');
 
-  console.log('Generating quiz questions from your notes...\n');
+  console.log('Generating quiz questions from your notes...');
   const genPrompt = [
     {
       role: 'user',
@@ -65,8 +65,10 @@ async function main() {
         `Notes:\n${notes}`,
     },
   ];
-  const rawQuiz = await ask(modelId, genPrompt);
+  // Generated silently so the answers aren't spoiled before you're asked.
+  const rawQuiz = await ask(modelId, genPrompt, { silent: true });
   const questions = parseQuestions(rawQuiz);
+  console.log(`Ready: ${questions.length} questions.\n`);
 
   if (questions.length === 0) {
     console.log('Could not parse any questions from the model output. Exiting.');
